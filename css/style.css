@@ -1,0 +1,178 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+ul{
+    list-style: none;
+    padding-inline-start: 0px;
+}
+
+body{
+    background: #F5F5F5;
+    padding: 80px 0 0 0;
+}
+
+header{
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    padding: 15px;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    background: #5CADE0;
+    box-shadow: 0px 4px 10px rgba(33, 121, 191, 0.7);
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+header input{
+    width: 100%;
+    height: 50px;
+    float: left;
+    color: #F2F1F1;
+    font-size: 15px;
+    font-weight: 400;
+    text-indent: 18px;
+    padding: 0 60px 0 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border: 0;
+    outline: none;
+}
+header input::-webkit-input-placeholder{
+    color: rgba(242, 241, 241, 0.50);
+}
+
+header button{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 2;
+    border-radius: 25px;
+    background-color: #EEEEF2;
+    border: 0px;
+    box-shadow: none;
+    outline: none;
+}
+.fa-plus{
+    font-size: 25px;
+    font-weight: bolder;
+}
+
+.container{
+    width: 100%;
+    float: left;
+    padding: 15px;
+}
+ul.todo{
+    width: 100%;
+    float: left;
+}
+ul.todo li{
+    width: 100%;
+    min-height: 50px;
+    float: left;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 22px;
+    color: #1E1E1E;
+    background:  #EEEEF2;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0px 4px 5px rgb(201, 222, 245);
+    margin: 0 0 10px 0;
+    padding: 14px 100px 14px 14px;
+}
+
+ul.todo li:last-of-type{
+    margin: 0;
+}
+
+ul.todo li .botones{
+    width: 100px;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+ul.todo li .botones button{
+    width: 50px;
+    height: 50px;
+    float: left;
+    background: none;
+    position: relative;
+    border: 0px;
+    box-shadow: none;
+    outline: none;
+    cursor: pointer;
+}
+
+ul.todo li .botones button:last-of-type::before{
+    content: '';
+    width: 1px;
+    height: 30px;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    background: #6F7782;
+
+}
+ul.todo#completed li .fa-circle-check{
+    color: #25b99a;
+}
+
+.fa-trash-can, .fa-circle-check{
+    font-size: 22px;
+    color: #1E1E1E;
+    transition: 0.2s ease;
+}
+.fa-trash-can:hover{
+    color: #e85656;
+}
+.fa-circle-check:hover{
+    color: #25b99a;
+}
+
+ul.todo#completed{
+    opacity: 0.5;
+    position: relative;
+    padding: 60px 0 0 0;
+    
+}
+
+ul.todo#completed:before{
+    content: '';
+    width: 150px;
+    height: 1px;
+    background: #6F7782;
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    margin: 0 0 0 -75px;
+}
+
+ul.todo#todo:empty:after {
+    content: 'No tienes ningun pendiente!';
+    margin: 15px 0 0 0;
+}
+
+ul.todo#completed:empty:after {
+content: 'No tienes ninguna tarea terminada aun.';
+}
+
+ul.todo#todo:after,
+ul.todo#completed:after {
+width: 100%;
+display: block;
+text-align: center;
+font-size: 12px;
+color: #aaa;
+}
